@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="RicartAgrawalMutualExclusion"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RicartAgrawalMutualExclusion">
+				<Option output="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/RicartAgrawalMutualExclusion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 RicartAgrawalMutualExclusion"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RicartAgrawalMutualExclusion/fast">
+				<Option output="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/RicartAgrawalMutualExclusion" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 RicartAgrawalMutualExclusion/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/hacker.c">
+			<Option target="RicartAgrawalMutualExclusion"/>
+		</Unit>
+		<Unit filename="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/main.c">
+			<Option target="RicartAgrawalMutualExclusion"/>
+		</Unit>
+		<Unit filename="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/node.c">
+			<Option target="RicartAgrawalMutualExclusion"/>
+		</Unit>
+		<Unit filename="/Users/ananta/CLionProjects/RicartAgrawalMutualExclusion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
