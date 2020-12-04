@@ -30,7 +30,7 @@ void send_to_print_server(int num_lines) {
     for (int i = 1; i < num_lines + 1; i++) {
         struct message line;
         line.mtype = MSG_CODE;
-        sprintf(line.mtext, "I am a hacker\n");
+        sprintf(line.mtext, "I am a hacker");
         msgsnd(qid, &line, SIZE, 0);
         sleep(2);
     }

@@ -73,7 +73,6 @@ void handle_sigint(int sig) {
 
 
 int main(int argc, char** argv) {
-    signal(SIGINT, handle_sigint);
     if (argc == 2) {
         me = atoi(argv[1]);
     } else {
@@ -81,7 +80,6 @@ int main(int argc, char** argv) {
         fflush(stdout);
         exit(1);
     }
-
 
     struct shmseg* shared_variables = initialize_shared_memory(me);
 
@@ -127,6 +125,9 @@ int main(int argc, char** argv) {
     receive_request();
     receive_reply();
 
+    signal(SIGINT, handle_sigint);
+
+
     waitpid(pid1, NULL, 0);
     waitpid(pid2, NULL, 0);
     waitpid(pid3, NULL, 0);
@@ -145,8 +146,6 @@ int receive_request() {
         key_t mutex_key = get_mutex_key(me);
         int mutex = semget(mutex_key, 1, IPC_CREAT | 0660);
 
-
-        signal(SIGINT, handle_sigint);
         while (1) {
             int defer_it = 0;
 
@@ -205,7 +204,6 @@ int receive_reply() {
 
         int wait_sem = semget(wait_sem_key, 1, IPC_CREAT | 0660);
 
-        signal(SIGINT, handle_sigint);
         while (1) {
 
             key_t key = ftok("myqueue", 65);
@@ -242,64 +240,60 @@ int send_request() {
         int mutex = semget(mutex_key, 1, IPC_CREAT | 0660);
         int wait_sem = semget(wait_sem_key, 1, IPC_CREAT | 0660);
 
-        signal(SIGINT, handle_sigint);
         char ch;
         while (1) {
             printf("Enter y to send a message, or any other character to exit\n");
             fflush(stdin);
             scanf(" %c", &ch);
-            printf("my char %c\n",ch);
+            printf("Option selected: %c\n",ch);
             fflush(stdout);
             if (ch != 'y'){
-                destory_ipcs_utils(me);
+                handle_sigint(-1);
                 break;
             }
 
             P(mutex);
-
 
             shared_variables->request_CS = 1;
             shared_variables->request_number = shared_variables->highest_request_number + 1;
 
             V(mutex);
 
-            print_shared_mem_contents(shared_variables);
-            fflush(stdout);
+            //print_shared_mem_contents(shared_variables);
+            //fflush(stdout);
 
             shared_variables->outstanding_reply = N - 1;
 
-
-
-            printf("I am at send request\n");
+            //printf("I am at send request\n");
             fflush(stdout);
             for (int i = 0; i < N; i++) {
                 if (i != me) {
                     send_request_to_queue(i, shared_variables->request_number);
-                    printf("sent request to %d\n", i);
+                    printf("Sent request to %d\n", i);
                     fflush(stdout);
                 }
             }
-            printf("I am done sending requests\n");
-            printf("Outstanding Reply: %d\n", shared_variables->outstanding_reply);
-            fflush(stdout);
+            //printf("I am done sending requests\n");
+            //printf("Outstanding Replies: %d\n", shared_variables->outstanding_reply);
+            //fflush(stdout);
 
             while (shared_variables->outstanding_reply != 0) {
-                printf("Outstanding Reply Inside While Loop: %d\n", shared_variables->outstanding_reply);
-                fflush(stdout);
+                //printf("Outstanding Reply Inside While Loop: %d\n", shared_variables->outstanding_reply);
+                //fflush(stdout);
                 P(wait_sem);
             }
 
-            printf("Outstanding Reply Before Critical Section: %d\n", shared_variables->outstanding_reply);
-            fflush(stdout);
+            //printf("Outstanding Reply Before Critical Section: %d\n", shared_variables->outstanding_reply);
+            //fflush(stdout);
 
             //critical section
-            printf("Reached critical section\n");
-            send_to_print_server(3);
-            printf("Completed the critical section\n");
-            fflush(stdout);
+            //printf("Reached critical section\n");
+            send_to_print_server(3); // critical section code
+            //printf("Completed the critical section\n");
+            //fflush(stdout);
 
-            printf("Outstanding Reply After Critical Section: %d\n", shared_variables->outstanding_reply);
-            fflush(stdout);
+            //printf("Outstanding Reply After Critical Section: %d\n", shared_variables->outstanding_reply);
+            //fflush(stdout);
 
             shared_variables->request_CS = 0;
 
