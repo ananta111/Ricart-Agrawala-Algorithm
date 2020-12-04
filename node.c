@@ -358,6 +358,7 @@ void send_to_print_server(int num_lines) {
         line.mtype = MSG_CODE;
         sprintf(line.mtext, "%d This is line %d", me, i);
         msgsnd(qid, &line, SIZE, 0);
+        sleep(1);
     }
 
     struct message end_msg;
