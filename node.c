@@ -243,15 +243,32 @@ int send_request() {
         int wait_sem = semget(wait_sem_key, 1, IPC_CREAT | 0660);
 
         signal(SIGINT, handle_sigint);
+        char ch;
         while (1) {
+            printf("Enter y to send a message, or any other character to exit\n");
+            fflush(stdin);
+            scanf(" %c", &ch);
+            printf("my char %c\n",ch);
+            fflush(stdout);
+            if (ch != 'y'){
+                destory_ipcs_utils(me);
+                break;
+            }
+
             P(mutex);
+
 
             shared_variables->request_CS = 1;
             shared_variables->request_number = shared_variables->highest_request_number + 1;
 
             V(mutex);
 
+            print_shared_mem_contents(shared_variables);
+            fflush(stdout);
+
             shared_variables->outstanding_reply = N - 1;
+
+
 
             printf("I am at send request\n");
             fflush(stdout);
@@ -263,7 +280,6 @@ int send_request() {
                 }
             }
             printf("I am done sending requests\n");
-
             printf("Outstanding Reply: %d\n", shared_variables->outstanding_reply);
             fflush(stdout);
 
@@ -294,7 +310,6 @@ int send_request() {
                     printf("Previously deferred but replied now to %d\n", i);
                 }
             }
-            sleep(1);
         }
     }
 

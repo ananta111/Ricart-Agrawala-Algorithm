@@ -13,7 +13,6 @@ struct message {
     char mtext[SIZE];
 };
 
-
 void send_to_print_server(int num_lines);
 
 
@@ -33,5 +32,6 @@ void send_to_print_server(int num_lines) {
         line.mtype = MSG_CODE;
         sprintf(line.mtext, "I am a hacker\n");
         msgsnd(qid, &line, SIZE, 0);
+        sleep(2);
     }
 }
