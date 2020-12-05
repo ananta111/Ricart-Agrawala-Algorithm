@@ -58,7 +58,6 @@ struct shmseg {
     int wait_sem;
 };
 
-// union struct for semaphore
 
 // my node number
 int me;
